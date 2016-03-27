@@ -17,7 +17,7 @@ $ npm install --global npm-pixiv
 ## Usage
 
 ```
-$ npm-popute install -S react react-dom
+$ npm-pixiv install -S react react-dom
 ```
 
 ## Recommend
