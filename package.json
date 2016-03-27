@@ -14,19 +14,6 @@
   "engins": {
     "node": ">=4"
   },
-  "dependencies": {
-    "cheerio": "^0.20.0",
-    "execa": "^0.2.2",
-    "got": "^6.2.0",
-    "term-img": "^0.2.0"
-  },
-  "devDependencies": {
-    "ava": "^0.13.0",
-    "xo": "^0.13.0"
-  },
-  "directories": {
-    "example": "example"
-  },
   "keywords": [
     "pixiv",
     "npm",
@@ -37,5 +24,15 @@
     "image",
     "iterm",
     "iterm2"
-  ]
+  ],
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "execa": "^0.2.2",
+    "got": "^6.2.0",
+    "term-img": "^0.2.0"
+  },
+  "devDependencies": {
+    "ava": "^0.13.0",
+    "xo": "^0.13.0"
+  }
 }
