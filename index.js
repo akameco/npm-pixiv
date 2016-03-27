@@ -14,11 +14,12 @@ function wait() {
 
 function step(urls) {
 	urls.reduce((p, url) => {
-		return p.then(() => wait()
-			.then(() => fetchImage(url))
-			.then(fetchImageBuffer)
-			.then(termImg)
-		);
+		return p.then(() => {
+			return wait()
+				.then(() => fetchImage(url))
+				.then(fetchImageBuffer)
+				.then(termImg);
+		});
 	}, Promise.resolve());
 }
 
