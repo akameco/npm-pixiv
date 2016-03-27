@@ -1,4 +1,4 @@
-# npm-pixiv [![Build Status](https://travis-ci.org/akameco/npm-pixivsvg?branch=master)](https://travis-ci.org/akameco/npm-pixiv)
+# npm-pixiv [![Build Status](https://travis-ci.org/akameco/npm-pixiv.svg?branch=master)](https://travis-ci.org/akameco/npm-pixiv)
 
 > watch pixiv daily ranking while running npm install
 
