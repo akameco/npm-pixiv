@@ -4,6 +4,10 @@
 
 **Note**: Images are only displayed inline for [users of iTerm2 using version 2.9 or greater](https://www.iterm2.com/images.html).
 
+## DEMO
+
+![npm-pixiv](media/npm-pixiv.gif)
+
 ## Installation
 
 ```
