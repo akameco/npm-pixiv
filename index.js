@@ -3,6 +3,7 @@ const got = require('got');
 const cheerio = require('cheerio');
 const termImg = require('term-img');
 const spawn = require('execa').spawn;
+const co = require('co');
 
 function wait() {
 	return new Promise(resolve => {
@@ -13,14 +14,12 @@ function wait() {
 }
 
 function step(urls) {
-	urls.reduce((p, url) => {
-		return p.then(() => {
-			return wait()
-				.then(() => fetchImage(url))
-				.then(fetchImageBuffer)
-				.then(termImg);
-		});
-	}, Promise.resolve());
+	co(function *() {
+		for (const url of urls) {
+			yield fetchImage(url).then(fetchImageBuffer).then(termImg);
+			yield wait();
+		}
+	});
 }
 
 function fetchImageBuffer(url) {
