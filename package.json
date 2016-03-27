@@ -1,0 +1,40 @@
+{
+  "name": "npm-pixiv",
+  "version": "0.1.0",
+  "description": "show pixiv daily ranking while running npm install",
+  "main": "index.js",
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "bin": {
+    "npm-pixiv": "cli.js"
+  },
+  "author": "akameco <akameco.t@gmail.com>",
+  "license": "MIT",
+  "engins": {
+    "node": ">=4"
+  },
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "execa": "^0.2.2",
+    "got": "^6.2.0"
+  },
+  "devDependencies": {
+    "ava": "^0.13.0",
+    "xo": "^0.13.0"
+  },
+  "directories": {
+    "example": "example"
+  },
+  "keywords": [
+    "pixiv",
+    "npm",
+    "install",
+    "npm",
+    "install",
+    "npm-pixiv",
+    "image",
+    "iterm",
+    "iterm2"
+  ]
+}
