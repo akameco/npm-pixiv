@@ -14,6 +14,10 @@
   "engins": {
     "node": ">=4"
   },
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
   "keywords": [
     "pixiv",
     "npm",
