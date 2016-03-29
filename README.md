@@ -6,7 +6,7 @@
 
 ## DEMO
 
-![npm-pixiv](media/demo.gif)
+<img src="media/demo.gif" alt="npm-pixiv">
 
 ## Installation
 
