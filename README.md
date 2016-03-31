@@ -6,12 +6,12 @@
 
 ## DEMO
 
-<img src="media/demo.gif" alt="npm-pixiv">
+![](media/demo.gif)
 
 ## Installation
 
 ```
-$ npm install --global npm-pixiv 
+$ npm install --global npm-pixiv
 ```
 
 ## Usage
