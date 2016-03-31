@@ -6,7 +6,7 @@
 
 ## DEMO
 
-![](media/demo.gif)
+![](https://raw.githubusercontent.com/akameco/npm-pixiv/master/media/demo.gif)
 
 ## Installation
 
