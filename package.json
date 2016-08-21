@@ -30,7 +30,7 @@
     "iterm2"
   ],
   "dependencies": {
-    "cheerio": "^0.20.0",
+    "cheerio": "^0.21.0",
     "co": "^4.6.0",
     "execa": "^0.4.0",
     "got": "^6.2.0",
