@@ -2,9 +2,8 @@
   "name": "npm-pixiv",
   "version": "0.1.7",
   "description": "show pixiv daily ranking while running npm install",
-  "main": "index.js",
   "scripts": {
-    "test": "xo && ava"
+    "test": "xo"
   },
   "bin": {
     "npm-pixiv": "cli.js"
@@ -15,7 +14,6 @@
     "node": ">=4"
   },
   "files": [
-    "index.js",
     "cli.js"
   ],
   "keywords": [
@@ -37,7 +35,6 @@
     "term-img": "^0.2.0"
   },
   "devDependencies": {
-    "ava": "^0.16.0",
     "xo": "^0.17.0"
   }
 }
