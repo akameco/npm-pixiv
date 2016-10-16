@@ -66,7 +66,7 @@ function displayImages() {
 module.exports = args => {
 	const ps = npm(args);
 	ps.on('exit', code => {
-		process.exit(code);
+		process.exit(code); // eslint-disable-line xo/no-process-exit
 	});
 
 	if (isInstall(args)) {
