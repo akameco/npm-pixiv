@@ -1,70 +1,52 @@
 #!/usr/bin/env node
 'use strict';
-const got = require('got');
-const cheerio = require('cheerio');
-const termImg = require('term-img');
-const spawn = require('execa').spawn;
 const co = require('co');
+const got = require('got');
+const delay = require('delay');
+const spawn = require('execa');
+const Pixiv = require('pixiv-app-api');
+const termImg = require('term-img');
 
-function wait() {
-	return new Promise(resolve => {
-		setTimeout(() => {
-			resolve();
-		}, 5000);
-	});
+function fetchImageBuffer(url) {
+	const opts = {
+		encoding: null,
+		headers: {
+			Referer: 'http://www.pixiv.net/'
+		}
+	};
+	return got(url, opts).then(res => res.body);
+}
+
+function fetchRanking() {
+	return new Pixiv().illustRanking().then(body =>
+		body.illusts.map(v => v.imageUrls.large)
+	);
+}
+
+const isInstall = args => args[0] === 'i' || args[0] === 'install';
+
+function npm(args) {
+	const opts = {
+		cwd: process.cwd(),
+		stdio: isInstall(args) ? 'ignore' : 'inherit'
+	};
+	return spawn('npm', args, opts);
 }
 
 function step(urls) {
 	co(function * () {
 		for (const url of urls) {
-			yield fetchImage(url).then(fetchImageBuffer).then(termImg);
-			yield wait();
+			yield fetchImageBuffer(url).then(termImg);
+			yield delay(1000);
 		}
-	});
-}
-
-function fetchImageBuffer(url) {
-	return got(url, {
-		encoding: null,
-		headers: {
-			Referer: 'http://www.pixiv.net/'
-		}
-	}).then(res => res.body);
-}
-
-function fetchImage(url) {
-	return got(url).then(res => {
-		const $ = cheerio.load(res.body);
-		return $('.img-container img').attr('src');
-	});
-}
-
-function fetchRanking() {
-	return got('http://www.pixiv.net/ranking.php?mode=daily').then(res => {
-		const $ = cheerio.load(res.body);
-		return $('.ranking-image-item a').map((i, v) => {
-			const href = $(v).attr('href');
-			return `http://www.pixiv.net/${href}`;
-		}).get();
-	});
-}
-
-function isInstall(args) {
-	return args[0] === 'i' || args[0] === 'install';
-}
-
-function npm(args) {
-	return spawn('npm', args, {
-		cwd: process.cwd(),
-		stdio: isInstall(args) ? 'ignore' : 'inherit'
 	});
 }
 
 function displayImages() {
-	fetchRanking().then(step).catch(console.log);
+	return fetchRanking().then(step).catch(console.error);
 }
 
-const run = args => {
+function run(args) {
 	const ps = npm(args);
 	ps.on('exit', code => {
 		process.exit(code);
@@ -73,7 +55,6 @@ const run = args => {
 	if (isInstall(args)) {
 		displayImages();
 	}
-};
+}
 
-const args = process.argv.slice(2);
-run(args);
+run(process.argv.slice(2));
