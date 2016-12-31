@@ -11,7 +11,7 @@
   "author": "akameco <akameco.t@gmail.com>",
   "license": "MIT",
   "engins": {
-    "node": ">=4"
+    "node": ">=6"
   },
   "files": [
     "cli.js"
