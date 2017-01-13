@@ -33,7 +33,7 @@
     "execa": "^0.6.0",
     "got": "^6.7.1",
     "pixiv-app-api": "^0.9.1",
-    "term-img": "^0.2.0"
+    "term-img": "^1.0.0"
   },
   "devDependencies": {
     "xo": "^0.17.1"
