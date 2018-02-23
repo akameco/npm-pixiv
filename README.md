@@ -1,5 +1,7 @@
 # npm-pixiv [![Build Status](https://travis-ci.org/akameco/npm-pixiv.svg?branch=master)](https://travis-ci.org/akameco/npm-pixiv)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/akameco/npm-pixiv.svg)](https://greenkeeper.io/)
+
 > watch pixiv daily ranking while running npm install
 
 **Note**: Images are only displayed inline for [users of iTerm2 using version 2.9 or greater](https://www.iterm2.com/images.html).
